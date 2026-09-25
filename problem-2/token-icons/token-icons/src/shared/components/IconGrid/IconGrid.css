@@ -1,0 +1,84 @@
+.icon-grid,
+.icon-grid-virtual {
+  --icon-card-min-width: 110px;
+  --icon-grid-gap: 12px;
+}
+
+@media (max-width: 560px) {
+  .icon-grid,
+  .icon-grid-virtual {
+    --icon-card-min-width: 84px;
+    --icon-grid-gap: 10px;
+  }
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--icon-card-min-width), 1fr));
+  gap: var(--icon-grid-gap);
+}
+
+.icon-grid-virtual { position: relative; }
+
+.icon-grid-virtual__row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  gap: var(--icon-grid-gap);
+  padding-bottom: var(--icon-grid-gap);
+}
+
+.icon-grid__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+@media (hover: hover) {
+  .icon-grid-virtual__row:hover { z-index: 1; }
+
+  .icon-grid--hover-grow .icon-grid__card img,
+  .icon-grid--hover-grow-spin .icon-grid__card img {
+    position: relative;
+    transition: scale 0.3s ease;
+  }
+
+  .icon-grid--hover-grow .icon-grid__card:hover img,
+  .icon-grid--hover-grow-spin .icon-grid__card:hover img {
+    z-index: 1;
+    scale: 1.5;
+  }
+
+  .icon-grid--hover-grow-spin .icon-grid__card {
+    perspective: 400px;
+  }
+
+  .icon-grid--hover-grow-spin .icon-grid__card:hover img {
+    animation: icon-grid-spin-twice 2s ease-in-out;
+  }
+}
+
+@keyframes icon-grid-spin-twice {
+  from { rotate: y 0deg; }
+  to { rotate: y 720deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-grid--hover-grow-spin .icon-grid__card:hover img { animation: none; }
+}
+
+.icon-grid__card span {
+  font-size: 0.8rem;
+  color: var(--muted);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

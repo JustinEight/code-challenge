@@ -1,0 +1,2 @@
+.status-message { text-align: center; color: var(--muted); }
+.status-message--error { color: var(--danger); }

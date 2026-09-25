@@ -1,0 +1,10 @@
+.search-input {
+  font: inherit;
+  color: inherit;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  width: 100%;
+  min-width: 0;
+}

@@ -1,0 +1,20 @@
+.asset-icon {
+  flex-shrink: 0;
+  object-fit: contain;
+  filter:
+    drop-shadow(1px 0 0 var(--icon-outline))
+    drop-shadow(-1px 0 0 var(--icon-outline))
+    drop-shadow(0 1px 0 var(--icon-outline))
+    drop-shadow(0 -1px 0 var(--icon-outline));
+}
+
+.asset-icon--fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--muted);
+  font-weight: 600;
+  filter: none;
+}

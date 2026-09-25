@@ -1,0 +1,41 @@
+{
+  "name": "icon-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "node validateImages.js",
+    "prepare": "husky install",
+    "precommit": "npm run test",
+    "typecheck": "tsc",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\" vite.config.mts",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx}\" vite.config.mts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "@tanstack/react-virtual": "^3.14.13",
+    "image-size": "^1.0.2",
+    "jimp": "^0.22.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router": "^7"
+  }
+}

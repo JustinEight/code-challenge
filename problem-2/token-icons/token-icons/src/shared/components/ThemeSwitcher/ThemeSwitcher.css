@@ -1,0 +1,27 @@
+.theme-switcher {
+  display: inline-flex;
+  padding: 2px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.theme-switcher__option {
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 560px) {
+  .theme-switcher__option { padding: 4px 8px; }
+}
+
+.theme-switcher__option--active {
+  color: var(--accent);
+  background: var(--bg);
+}
